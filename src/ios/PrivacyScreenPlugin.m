@@ -111,17 +111,9 @@ static UIImageView *imageView;
   BOOL isLandscape = currentOrientation == UIInterfaceOrientationLandscapeLeft || currentOrientation == UIInterfaceOrientationLandscapeRight;
 
   if (device.iPhone5) { // does not support landscape
-    if (isLandscape) {
-      imageName = [imageName stringByAppendingString:@"-Landscape-736h"];
-    } else {
-      imageName = [imageName stringByAppendingString:@"-568h"];
-    }
+    imageName = [imageName stringByAppendingString:@"-568h"];
   } else if (device.iPhone6) { // does not support landscape
-    if (isLandscape) {
-      imageName = [imageName stringByAppendingString:@"-Landscape-736h"];
-    } else {
-      imageName = [imageName stringByAppendingString:@"-667h"];
-    }
+    imageName = [imageName stringByAppendingString:@"-667h"];
   } else if (device.iPhone6Plus) { // supports landscape
     if (isOrientationLocked) {
       imageName = [imageName stringByAppendingString:(supportsLandscape ? @"-Landscape" : @"")];
